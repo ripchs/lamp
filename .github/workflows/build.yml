@@ -19,10 +19,10 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: pip install pyinstaller bleak fastapi uvicorn
+        run: pip install pyinstaller bleak fastapi uvicorn pywebview
 
       - name: Build exe
-        run: pyinstaller --onefile --name lamp lamp.py
+        run: pyinstaller --onefile --noconsole --name lamp lamp.py
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
